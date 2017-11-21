@@ -12,7 +12,15 @@ namespace Bank.ATM
         {
             BankController Bank = new BankController();
 
-            Console.WriteLine((Bank.CreateCustomer("Jay Jackson", 454545, 9838)));
+            Console.Write("New Account Information \n"+
+                              "Name: ");
+            string userName = Console.ReadLine();
+            Console.Write("ID: ");
+            int userId = Convert.ToInt32(Console.ReadLine());
+            Console.Write("Pin: ");
+            int userPin = Convert.ToInt32(Console.ReadLine());
+
+            Bank.CreateCustomer(userName, userId, userPin);
         }
     }
 }

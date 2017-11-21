@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace Bank.Services
@@ -27,7 +28,7 @@ namespace Bank.Services
         public bool BOOL_CustomerIdAvailable(int id)
         {
             using (var ctx = new BankDBEntities())
-            {
+            {                
                 return (from c in ctx.Customers where c.CustomerID == id select c).Count() == 0;
             }
         }
