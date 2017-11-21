@@ -9,9 +9,11 @@ namespace Bank.Services
 {
     class BankService
     {
-        public BankService()
-        {
+        private readonly int _userId;
 
+        public BankService(int userId)
+        {
+            _userId = userId;
         }
 
         public IEnumerable<Customers> GetCustomers()
@@ -22,15 +24,21 @@ namespace Bank.Services
             }
         }
 
-        public Customers CreateCustomer()
+        public bool CreateCustomer(string name, int pin)
         {
             using (var ctx = new BankDBEntities())
             {
-                var entity = 
+                var entity =
                     new Customers
                     {
+                        CustomerID = _userId,
+                        CustomerName = name,
+                        CustomerPin = pin
+                    };
 
-                    }
+                ctx.Customers.Add(entity);
+
+                return ctx.SaveChanges() == 1;
             }
         }
     }
