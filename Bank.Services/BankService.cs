@@ -9,7 +9,7 @@ namespace Bank.Services
 {
     public class BankService
     {
-        private readonly int _userId;
+        //private readonly int _userId;
 
         //public BankService(int userId)
         //{
@@ -32,15 +32,15 @@ namespace Bank.Services
             }
         }
 
-        public bool CreateCustomer(string name, int pin)
+        public bool CreateCustomer(string name, int id, int pin)
         {
             using (var ctx = new BankDBEntities())
             {
                 var entity =
                     new Customers
                     {
-                        CustomerID = _userId,
                         CustomerName = name,
+                        CustomerID = id,
                         CustomerPin = pin
                     };
 

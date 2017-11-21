@@ -9,14 +9,16 @@ namespace Bank.ATM
 {
     class BankController
     {
-        private BankService CreateBankService()
-        {
-            return new BankService();
-        }
-
         public bool CreateCustomer(string name, int id, int pin)
         {
-            return CreateBankService().BOOL_CustomerIdAvailable(id);
+            var svc = new BankService();
+            if (!svc.BOOL_CustomerIdAvailable(id)) return false;
+            if(pin.ToString().Length != 4)
+            {
+                Console.WriteLine("Error: Pin must be 4 digits long.");
+                return false;
+            }
+            return svc.CreateCustomer(name, id, pin);
         }
 
     }
