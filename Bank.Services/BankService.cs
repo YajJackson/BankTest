@@ -10,13 +10,6 @@ namespace Bank.Services
 {
     public class BankService
     {
-        //private readonly int _userId;
-
-        //public BankService(int userId)
-        //{
-        //    _userId = userId;
-        //}
-
         public IEnumerable<Customers> GetCustomers()
         {
             using (var ctx = new BankDBEntities())
@@ -49,6 +42,14 @@ namespace Bank.Services
 
                 return ctx.SaveChanges() == 1;
             }
+        }
+
+        public Customers GetCustomerById(int id, int pin)
+        {
+            return 
+                new BankDBEntities()
+                    .Customers
+                    .SingleOrDefault(e => e.CustomerID == id && e.CustomerPin == pin);
         }
     }
 }
