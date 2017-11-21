@@ -37,6 +37,7 @@ namespace Bank.ATM
                 Console.WriteLine("Error: Pin must be 4 digits long.");
                 Thread.Sleep(500);
             }
+
             return svc.GetCustomerById(id, pin);
         }
     }
