@@ -7,20 +7,28 @@ using System.Threading.Tasks;
 
 namespace Bank.Services
 {
-    class BankService
+    public class BankService
     {
         private readonly int _userId;
 
-        public BankService(int userId)
-        {
-            _userId = userId;
-        }
+        //public BankService(int userId)
+        //{
+        //    _userId = userId;
+        //}
 
         public IEnumerable<Customers> GetCustomers()
         {
             using (var ctx = new BankDBEntities())
             {
                 return ctx.Customers;
+            }
+        }
+
+        public bool BOOL_CustomerIdAvailable(int id)
+        {
+            using (var ctx = new BankDBEntities())
+            {
+                return (from c in ctx.Customers where c.CustomerID == id select c).Count() == 0;
             }
         }
 
