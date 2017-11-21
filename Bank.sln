@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bank.Services", "Bank.Servi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bank.ATM", "Bank.ATM\Bank.ATM.csproj", "{E80265B6-76F6-4AB7-8FED-501153A72CD7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bank.Console", "Bank.Console\Bank.Console.csproj", "{C670DBB0-6165-4322-90D1-D8D5D0415430}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{E80265B6-76F6-4AB7-8FED-501153A72CD7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E80265B6-76F6-4AB7-8FED-501153A72CD7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E80265B6-76F6-4AB7-8FED-501153A72CD7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C670DBB0-6165-4322-90D1-D8D5D0415430}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C670DBB0-6165-4322-90D1-D8D5D0415430}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C670DBB0-6165-4322-90D1-D8D5D0415430}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C670DBB0-6165-4322-90D1-D8D5D0415430}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

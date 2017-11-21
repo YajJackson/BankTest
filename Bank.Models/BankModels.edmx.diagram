@@ -5,8 +5,8 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="5ac075fa8de949d7aaf182eada627e1b" Name="Diagram1" ZoomLevel="131">
-        <EntityTypeShape EntityType="BankDBModel.Accounts" Width="1.5" PointX="3" PointY="0.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="BankDBModel.Customers" Width="1.5" PointX="0.75" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="BankDBModel.Accounts" Width="1.5" PointX="3.125" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="BankDBModel.Customers" Width="1.5" PointX="0.625" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="BankDBModel.Transactions" Width="1.5" PointX="5.25" PointY="0.875" IsExpanded="true" />
         <AssociationConnector Association="BankDBModel.FK__Accounts__Custom__47DBAE45" ManuallyRouted="false" />
         <AssociationConnector Association="BankDBModel.FK__Transacti__Accou__48CFD27E" ManuallyRouted="false" />

@@ -26,23 +26,23 @@ namespace Bank.Services
             }
         }
 
-        public bool CreateCustomer(string name, int id, int pin)
-        {
-            using (var ctx = new BankDBEntities())
-            {
-                var entity =
-                    new Customers
-                    {
-                        CustomerName = name,
-                        CustomerID = id,
-                        CustomerPin = pin
-                    };
+        //public bool CreateCustomer(string name, int id, int pin)
+        //{
+        //    using (var ctx = new BankDBEntities())
+        //    {
+        //        var entity =
+        //            new Customers
+        //            {
+        //                CustomerName = name,
+        //                CustomerID = id,
+        //                CustomerPin = pin
+        //            };
 
-                ctx.Customers.Add(entity);
+        //        ctx.Customers.Add(entity);
 
-                return ctx.SaveChanges() == 1;
-            }
-        }
+        //        return ctx.SaveChanges() == 1;
+        //    }
+        //}
 
         public Customers GetCustomerById(int id, int pin)
         {
@@ -50,6 +50,38 @@ namespace Bank.Services
                 new BankDBEntities()
                     .Customers
                     .SingleOrDefault(e => e.CustomerID == id && e.CustomerPin == pin);
+        }
+
+
+
+
+
+
+
+
+
+
+
+        public bool CreateCustomer(int id, int pin, string name)
+        {
+            //Create db context, so we can talk to the database
+            //Create a new customer, to be added
+            //Add the new customer
+            //Save changes
+            using (var context = new BankDBEntities())
+            {
+                var newCustomer =
+                    new Customers
+                    {
+                        CustomerID = id,
+                        CustomerPin = pin,
+                        CustomerName = name
+                    };
+
+                context.Customers.Add(newCustomer);
+
+                return context.SaveChanges() == 1;
+            }
         }
     }
 }
