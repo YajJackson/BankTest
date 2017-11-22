@@ -81,6 +81,14 @@ namespace Bank.Services
                 return context.SaveChanges() == 1;
             }
         }
+        
+        public Accounts GetAccountById(int num, int id)
+        {
+            return
+                new BankDBEntities()
+                    .Accounts
+                    .SingleOrDefault(e => e.CustomerID == id && e.AccountNumber == num);
+        }
         #endregion
     }
 }

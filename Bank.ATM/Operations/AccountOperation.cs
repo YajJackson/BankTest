@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Bank.ATM.Operations
 {
-    class AccountOperations
+    public static class AccountOperation
     {
     }
 }

@@ -50,6 +50,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controllers\BankController.cs" />
+    <Compile Include="Operations\AccountOperations.cs" />
     <Compile Include="Operations\BankOperation.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

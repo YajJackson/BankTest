@@ -47,5 +47,9 @@ namespace Bank.ATM
             return UserOperation.UserLogin();
         }
 
+        public static void AccountOptions()
+        {
+
+        }
     }
 }

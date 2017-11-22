@@ -46,7 +46,19 @@ namespace Bank.ATM
 
         public bool Account_Create(int num, int id, string type)
         {
+            if (!bank.BOOL_AccountNumberAvailable(num))
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("\nError: That Account Number is already in use.");
+                Thread.Sleep(1500);
+                return false;
+            }
+            return bank.CreateAccount(num, id, type);
+        }
 
+        public Accounts Account_Get(int num, int id)
+        {
+            return bank.GetAccountById(num, id);
         }
     }
 }
