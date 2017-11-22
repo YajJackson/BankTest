@@ -11,34 +11,37 @@ namespace Bank.ATM
 {
     class BankController
     {
+        private static BankService bank = new BankService();
+
         public bool Customer_Create(string name, int id, int pin)
         {
-            var svc = new BankService();
-            if (!svc.BOOL_CustomerIdAvailable(id))
+            if (!bank.BOOL_CustomerIdAvailable(id))
             {
-                Console.WriteLine("Error: That ID is already in use.");
-                Thread.Sleep(500);
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("\nError: That ID is already in use.");
+                Thread.Sleep(1500);
                 return false;
             }
             if(pin.ToString().Length != 4)
             {
-                Console.WriteLine("Error: Pin must be 4 digits long.");
-                Thread.Sleep(500);
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("\nError: Pin must be 4 digits long.");
+                Thread.Sleep(1500);
                 return false;
             }
-            return svc.CreateCustomer(name, id, pin);
+            return bank.CreateCustomer(name, id, pin);
         }
 
         public Customers Customer_Login(int id, int pin)
         {
-            var svc = new BankService();
             if (pin.ToString().Length != 4)
             {
-                Console.WriteLine("Error: Pin must be 4 digits long.");
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("\nError: Pin must be 4 digits long.");
                 Thread.Sleep(500);
             }
 
-            return svc.GetCustomerById(id, pin);
+            return bank.GetCustomerById(id, pin);
         }
     }
 }
