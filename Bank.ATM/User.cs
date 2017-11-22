@@ -7,11 +7,12 @@ using System.Threading.Tasks;
 
 namespace Bank.ATM
 {
-    class User
+    public class User
     {
         public int UserID { get; set; }
         public bool LoggedIn { get; set; }
         public string Name { get; set; }
-        public IEnumerable<Accounts> Accounts { get; set; }
+        public Accounts CurrentAccount { get; set; }
+        public ICollection<Accounts> Accounts { get; set; }
     }
 }

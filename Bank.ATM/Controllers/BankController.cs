@@ -43,5 +43,10 @@ namespace Bank.ATM
 
             return bank.GetCustomerById(id, pin);
         }
+
+        public bool Account_Create(int num, int id, string type)
+        {
+
+        }
     }
 }

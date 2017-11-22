@@ -7,11 +7,11 @@ using System.Threading.Tasks;
 
 namespace Bank.ATM
 {
-    public class UserOperation
+    public static class UserOperation
     {
         private static BankController bank = new BankController();
 
-        public void UserCreate()
+        public static void UserCreate()
         {
             int inputId;
             int inputPin;
@@ -82,7 +82,7 @@ namespace Bank.ATM
             }
         }
 
-        public void UserLogin()
+        public static User UserLogin()
         {
             int inputId;
             int inputPin;
@@ -135,6 +135,12 @@ namespace Bank.ATM
                 Thread.Sleep(1500);
                 UserLogin();
             }
+            return new User
+                {
+                    LoggedIn = true,
+                    Name = currentUser.CustomerName,
+                    UserID = currentUser.CustomerID
+                };
         }
     }
 }
